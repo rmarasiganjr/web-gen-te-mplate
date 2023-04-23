@@ -10,7 +10,7 @@
 
 <script>
 import Navbar from './components/NavBar';
-import Footer from './components/FooterPage';
+import Footer from './components/AppFooter';
 
 export default {
   components: {

@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  name: 'FooterPage',
+  name: 'App-Footer',
 };
 </script>
 
