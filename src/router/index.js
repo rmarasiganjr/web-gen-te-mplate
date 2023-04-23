@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import LandingPage from '../components/LandingPage.vue';
 import LoginPage from '../components/LoginPage.vue';
 import DashboardPage from '../components/DashBoard.vue';
+import NotFound from '../components/NotFound.vue';
 import store from '../store';
 
 const routes = [
@@ -22,6 +23,10 @@ const routes = [
     meta: {
       requiresAuth: true,
     },
+  },
+  {
+    path: '/:catchAll(.*)', // this matches all non-matching routes
+    component: NotFound, // redirect to the 404 component
   },
 ];
 

@@ -1,0 +1,17 @@
+.jumbotron {
+  background-color: #0d6efd;
+  color: white;
+}
+
+.home-page {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.home-page h2 {
+  margin-top: 2rem;
+}
+
+.home-page p {
+  margin-bottom: 1.5rem;
+}
