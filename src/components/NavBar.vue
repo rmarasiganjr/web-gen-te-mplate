@@ -22,12 +22,12 @@ export default {
   name: 'NavBar',
   computed: {
     loggedIn() {
-      return localStorage.getItem('authToken');
+      return this.$store.state.authToken; // Use the authToken state in Vuex instead of localStorage
     },
   },
   methods: {
     logout() {
-      localStorage.removeItem('authToken');
+      this.$store.commit('removeAuthToken'); // Use the removeAuthToken mutation in Vuex to remove the token
       this.$router.push('/login');
     },
   },

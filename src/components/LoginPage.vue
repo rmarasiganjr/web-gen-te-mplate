@@ -40,6 +40,9 @@
                 <button type="submit" class="btn btn-primary w-100">
                   Login
                 </button>
+                <div v-if="loginError" class="text-danger mt-3">
+                  {{ loginError }}
+                </div>
               </div>
             </form>
           </div>
@@ -50,7 +53,7 @@
 </template>
 
 <script>
-import axios from 'axios';
+import { mapActions } from 'vuex';
 
 export default {
   name: 'LoginPage',
@@ -61,6 +64,11 @@ export default {
       emailError: '',
       passwordError: '',
     };
+  },
+  computed: {
+    loginError() {
+      return this.$store.state.loginError;
+    },
   },
   methods: {
     validateForm() {
@@ -91,20 +99,13 @@ export default {
       }
 
       try {
-        const response = await axios.post('your_api_endpoint', {
-          email: this.email,
-          password: this.password,
-        });
-
-        // Save the token in localStorage or use Vuex state management
-        localStorage.setItem('authToken', response.data.token);
-
-        // Redirect to the dashboard
-        this.$router.push('/dashboard');
+        await this.login({ email: this.email, password: this.password }); // Call the login action
+        await this.initializeStore(); // Call the initializeStore action
       } catch (error) {
         console.error('Login failed:', error);
       }
     },
+    ...mapActions(['login', 'initializeStore']), // Add the login and initializeStore actions
   },
 };
 </script>
