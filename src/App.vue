@@ -1,26 +1,23 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app" class="d-flex flex-column min-vh-100">
+    <Navbar />
+    <div class="flex-grow-1">
+      <router-view />
+    </div>
+    <Footer />
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Navbar from './components/NavBar';
+import Footer from './components/FooterPage';
 
 export default {
-  name: 'App',
   components: {
-    HelloWorld
-  }
-}
+    Navbar,
+    Footer,
+  },
+};
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+<!-- Keep the global styles from the previous example -->
