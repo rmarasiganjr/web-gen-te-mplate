@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import LandingPage from '../views/LandingPageView.vue';
-import LoginPage from '../views/LoginPage.vue';
+import LandingPage from '../views/HomeView.vue';
+import LoginPage from '../views/LoginView.vue';
 import DashboardPage from '../views/DashboardView.vue';
 import NotFound from '../views/error/NotFound.vue';
 import store from '../store';

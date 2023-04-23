@@ -28,7 +28,7 @@ export default createStore({
   },
   actions: {
     async login(context, credentials) {
-      const url = 'http://localhost:5000/api/auth/login';
+      const url = process.env.VUE_APP_API_URL + '/api/auth/login';
       try {
         const response = await axios.post(url, credentials);
 

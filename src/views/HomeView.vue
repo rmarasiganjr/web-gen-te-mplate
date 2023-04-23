@@ -1,13 +1,6 @@
 <template>
   <div class="home-page">
-    <div class="jumbotron jumbotron-fluid">
-      <div class="container">
-        <h1 class="display-4">Welcome to Our Company</h1>
-        <p class="lead">
-          We offer innovative solutions to help businesses grow and succeed.
-        </p>
-      </div>
-    </div>
+    <div class="jumbotron jumbotron-fluid"></div>
     <div class="container">
       <div class="row">
         <div class="col-md-8">
@@ -48,7 +41,7 @@
 </template>
 
 <script>
-import '../../custom-style.css';
+import '../../customStyle.css';
 
 export default {
   name: 'HomePage',
